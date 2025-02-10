@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { useTranslation } from "react-i18next";

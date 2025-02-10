@@ -4,7 +4,6 @@ import { BookContext } from "../_Context/bookContext";
 import Image from "next/image";
 import bookMarkApi from "../_Utils/bookMarkApi";
 import { useUser } from "@clerk/clerk-react";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import useSetup from "../hooks/useSetup";
 import i18n from "../i18n";
@@ -14,7 +13,6 @@ import bookApi from "../_Utils/bookMarkApi";
 function BookMarkPage() {
   const { bookedItems, removeBookedItem } = useBooked();
   const { booked, setBooked } = useContext(BookContext);
-
   const { user } = useUser();
   const { t } = useTranslation();
   const { lng, darkmode } = useSetup();

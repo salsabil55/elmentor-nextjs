@@ -6,9 +6,7 @@ import { usePathname } from "next/navigation";
 import ServiceBanner from "../_components/ServiceBanner";
 import ServiceDetInfo from "../_components/ServiceDetInfo";
 import ServiceInfo from "../_components/ServiceInfo";
-import i18n from "../../i18n";
 import useSetup from "../../hooks/useSetup";
-import cookies from "js-cookie";
 function ServiceDetail({ params }) {
   // const lng = cookies.get("i18next") || "en";
   // const [lnges, setlnges] = useState(i18n.language); // Track current language

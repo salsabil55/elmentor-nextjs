@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import cookies from "js-cookie";
 
 import useSetup from "../hooks/useSetup";
 
