@@ -17,17 +17,19 @@ function InstructorPage() {
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
 
   useEffect(() => {
-    const handleDarkModeChange = () => {
-      setIsDarkMode(
-        document.documentElement.getAttribute("data-theme") === "dark"
-      );
-    };
+    if (typeof window !== "undefined") {
+      const handleDarkModeChange = () => {
+        setIsDarkMode(
+          document.documentElement.getAttribute("data-theme") === "dark"
+        );
+      };
 
-    window.addEventListener("darkmodeChange", handleDarkModeChange);
+      window.addEventListener("darkmodeChange", handleDarkModeChange);
 
-    return () => {
-      window.removeEventListener("darkmodeChange", handleDarkModeChange);
-    };
+      return () => {
+        window.removeEventListener("darkmodeChange", handleDarkModeChange);
+      };
+    }
   }, []);
 
   const sliderRef = useRef(null);
@@ -36,11 +38,13 @@ function InstructorPage() {
   const [serviceList, setServiceList] = useState([]);
 
   useEffect(() => {
-    getService();
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: false,
-    });
+    if (typeof window !== "undefined") {
+      getService();
+      AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+        once: false,
+      });
+    }
   }, [lng]);
 
   const getService = async () => {
@@ -139,7 +143,10 @@ function InstructorPage() {
           <div className="mt-8">
             <div id="keen-slider" className="keen-slider">
               {serviceList.map((service) => (
-                <div className="keen-slider__slide opacity-40 transition-opacity duration-500">
+                <div
+                  key={service.id}
+                  className="keen-slider__slide opacity-40 transition-opacity duration-500"
+                >
                   <blockquote
                     className={`rounded-lg text-justify p-6 shadow-sm sm:p-8 flex ${
                       !isDarkMode

@@ -19,7 +19,7 @@ import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 import useSetup from "../hooks/useSetup";
 
-function page() {
+function Page() {
   const [serviceList, setServiceList] = useState([]);
   const [filter, setFilter] = useState(""); // Initialize filter state
   const [filteredServices, setFilteredServices] = useState([]); // Filtered results
@@ -36,17 +36,19 @@ function page() {
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
 
   useEffect(() => {
-    const handleDarkModeChange = () => {
-      setIsDarkMode(
-        document.documentElement.getAttribute("data-theme") === "dark"
-      );
-    };
+    if (typeof window !== "undefined") {
+      const handleDarkModeChange = () => {
+        setIsDarkMode(
+          document.documentElement.getAttribute("data-theme") === "dark"
+        );
+      };
 
-    window.addEventListener("darkmodeChange", handleDarkModeChange);
+      window.addEventListener("darkmodeChange", handleDarkModeChange);
 
-    return () => {
-      window.removeEventListener("darkmodeChange", handleDarkModeChange);
-    };
+      return () => {
+        window.removeEventListener("darkmodeChange", handleDarkModeChange);
+      };
+    }
   }, []);
   // Check if the service is already booked
   useEffect(() => {
@@ -352,4 +354,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

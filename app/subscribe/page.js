@@ -8,7 +8,7 @@ import cookies from "js-cookie";
 
 import useSetup from "../hooks/useSetup";
 
-function page() {
+function Page() {
   const { t } = useTranslation();
   const router = useRouter();
   const { user } = useUser();
@@ -17,17 +17,19 @@ function page() {
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
 
   useEffect(() => {
-    const handleDarkModeChange = () => {
-      setIsDarkMode(
-        document.documentElement.getAttribute("data-theme") === "dark"
-      );
-    };
+    if (typeof window !== "undefined") {
+      const handleDarkModeChange = () => {
+        setIsDarkMode(
+          document.documentElement.getAttribute("data-theme") === "dark"
+        );
+      };
 
-    window.addEventListener("darkmodeChange", handleDarkModeChange);
+      window.addEventListener("darkmodeChange", handleDarkModeChange);
 
-    return () => {
-      window.removeEventListener("darkmodeChange", handleDarkModeChange);
-    };
+      return () => {
+        window.removeEventListener("darkmodeChange", handleDarkModeChange);
+      };
+    }
   }, []);
   const getTotalAmount = () => {
     let totalAmount = 1000;
@@ -68,7 +70,7 @@ function page() {
           <div className="border rounded text-center p-4 mt-5">
             <p>
               only
-              <span dir={`${lng === "ar" ? "rtl" : ""}`}>89 SAR/month</span>
+              <span dir={`${lng === "ar" ? "rtl" : "ltr"}`}>89 SAR/month</span>
             </p>
             <p>{t("Chargedmonthly")}</p>
           </div>
@@ -104,7 +106,7 @@ function page() {
               : "bg-[#1e21214d] text-white"
           }`}
         >
-          <div className="absolute bg-[#bd2130] w-[50px] h-[50px] rouded text-[12px] flex items-center right-0 -top-6 rounded-[50%]">
+          <div className="absolute bg-[#bd2130] w-[50px] h-[50px] rounded text-[12px] flex items-center right-0 -top-6 rounded-[50%]">
             <span>Save 56%</span>
           </div>
           <h2 className="text-white text-[25px] font-bold  mb-3">
@@ -124,7 +126,7 @@ function page() {
             </p>
             <p>
               Only{" "}
-              <span className={`${lng === "ar" ? "rtl" : ""}`}>
+              <span className={`${lng === "ar" ? "rtl" : "ltr"}`}>
                 39 SAR/month
               </span>
             </p>
@@ -153,4 +155,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

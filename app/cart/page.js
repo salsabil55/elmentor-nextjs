@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import useSetup from "../hooks/useSetup";
 
-function cartPage() {
+function CartPage() {
   const { t } = useTranslation();
   const router = useRouter();
   const { cart, setCart } = useContext(CartContext);
@@ -19,17 +19,19 @@ function cartPage() {
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
 
   useEffect(() => {
-    const handleDarkModeChange = () => {
-      setIsDarkMode(
-        document.documentElement.getAttribute("data-theme") === "dark"
-      );
-    };
+    if (typeof window !== "undefined") {
+      const handleDarkModeChange = () => {
+        setIsDarkMode(
+          document.documentElement.getAttribute("data-theme") === "dark"
+        );
+      };
 
-    window.addEventListener("darkmodeChange", handleDarkModeChange);
+      window.addEventListener("darkmodeChange", handleDarkModeChange);
 
-    return () => {
-      window.removeEventListener("darkmodeChange", handleDarkModeChange);
-    };
+      return () => {
+        window.removeEventListener("darkmodeChange", handleDarkModeChange);
+      };
+    }
   }, []);
   const getTotalAmount = () => {
     let totalAmount = 0;
@@ -287,4 +289,4 @@ function cartPage() {
   );
 }
 
-export default cartPage;
+export default CartPage;

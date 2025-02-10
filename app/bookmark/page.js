@@ -11,7 +11,7 @@ import i18n from "../i18n";
 import { useBooked } from "../_Context/bookMarkContext";
 import bookApi from "../_Utils/bookMarkApi";
 
-function bookMarkPage() {
+function BookMarkPage() {
   const { bookedItems, removeBookedItem } = useBooked();
   const { booked, setBooked } = useContext(BookContext);
 
@@ -21,21 +21,25 @@ function bookMarkPage() {
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
 
   useEffect(() => {
-    const handleDarkModeChange = () => {
-      setIsDarkMode(
-        document.documentElement.getAttribute("data-theme") === "dark"
-      );
-    };
+    if (typeof window !== "undefined") {
+      const handleDarkModeChange = () => {
+        setIsDarkMode(
+          document.documentElement.getAttribute("data-theme") === "dark"
+        );
+      };
 
-    window.addEventListener("darkmodeChange", handleDarkModeChange);
+      window.addEventListener("darkmodeChange", handleDarkModeChange);
 
-    return () => {
-      window.removeEventListener("darkmodeChange", handleDarkModeChange);
-    };
+      return () => {
+        window.removeEventListener("darkmodeChange", handleDarkModeChange);
+      };
+    }
   }, []);
 
   useEffect(() => {
-    window.document.dir = i18n.dir();
+    if (typeof window !== "undefined") {
+      window.document.dir = i18n.dir();
+    }
   }, [lng]);
 
   useEffect(() => {
@@ -183,4 +187,4 @@ function bookMarkPage() {
     </section>
   );
 }
-export default bookMarkPage;
+export default BookMarkPage;
