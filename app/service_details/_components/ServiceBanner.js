@@ -24,11 +24,10 @@ function ServiceBanner({ serviceDetail }) {
           width={imageWidth}
           height={imageHeight}
           alt="service Detail Banner"
-          className="transition duration-500 group-hover:scale-105 rounded-lg "
+          className="transition duration-500 group-hover:scale-105 rounded-lg mb-12"
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
-          className="mb-12"
         />
       ) : (
         <div
