@@ -13,8 +13,9 @@ import useSetup from "../hooks/useSetup";
 
 import dynamic from "next/dynamic";
 
-const InstructorPage = dynamic(() => import("../components/InstructorPage"), {
-  ssr: false,
+// Dynamically import the InstructorPage component and disable SSR
+const InstructorPage = dynamic(() => import("../instructor"), {
+  ssr: false, // Disables SSR for this component
 });
   const { t } = useTranslation();
   const { lng, darkmode } = useSetup();
