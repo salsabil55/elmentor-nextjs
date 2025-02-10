@@ -11,7 +11,11 @@ import "keen-slider/keen-slider.min.css";
 import { useTranslation } from "react-i18next";
 import useSetup from "../hooks/useSetup";
 
-function InstructorPage() {
+import dynamic from "next/dynamic";
+
+const InstructorPage = dynamic(() => import("../components/InstructorPage"), {
+  ssr: false,
+});
   const { t } = useTranslation();
   const { lng, darkmode } = useSetup();
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
