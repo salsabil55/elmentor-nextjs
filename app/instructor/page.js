@@ -11,12 +11,7 @@ import "keen-slider/keen-slider.min.css";
 import { useTranslation } from "react-i18next";
 import useSetup from "../hooks/useSetup";
 
-import dynamic from "next/dynamic";
-
-// Dynamically import the InstructorPage component and disable SSR
-const InstructorPage = dynamic(() => import("../instructor"), {
-  ssr: false, // Disables SSR for this component
-});
+function InstructorPage() {
   const { t } = useTranslation();
   const { lng, darkmode } = useSetup();
   const [isDarkMode, setIsDarkMode] = useState(darkmode === "dark");
