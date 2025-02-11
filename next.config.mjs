@@ -9,4 +9,5 @@ const nextConfig = {
   images: { domains: ["res.cloudinary.com"] },
 };
 
-export default nextConfig;
+// export default nextConfig;
+module.exports = nextConfig; // Use module.exports instead of export default
