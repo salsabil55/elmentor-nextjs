@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-import { i18n } from "./next-i18next.config.mjs";
+import { i18n } from "./next-i18next.config.js";
 
 const nextConfig = {
   experimental: {
@@ -10,4 +10,4 @@ const nextConfig = {
 };
 
 // export default nextConfig;
-export default nextConfig; // Using export default in ES module
+module.exports = nextConfig;
