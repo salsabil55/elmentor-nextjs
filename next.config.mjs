@@ -10,4 +10,4 @@ const nextConfig = {
 };
 
 // export default nextConfig;
-module.exports = nextConfig; // Use module.exports instead of export default
+export default nextConfig; // Using export default in ES module
