@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 const apiKey = process.env.NEXT_PUBLIC_REST_API_KEY;
-const apiurl = "https://strapi-ecommerce-beiz.onrender.com/api";
+const apiurl = "https://strapi-ecommerce-nlxf.onrender.com/api";
 
 const axiosClient = axios.create({
   baseURL: apiurl,

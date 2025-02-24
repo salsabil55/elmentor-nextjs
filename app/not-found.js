@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div className="flex justify-center items-center flex-col bg-white pt-20 pb-20">
       <Image
-        src="https://res.cloudinary.com/dahptqhed/image/upload/v1733632662/error_37b93edaeb.png"
+        src="https://res.cloudinary.com/dahptqhed/image/upload/v1740401227/error_29d9c1e84f.png"
         alt="Not Found"
         width={500}
         height={300}
