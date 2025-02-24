@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div className="flex justify-center items-center flex-col bg-white pt-20 pb-20">
       <Image
@@ -18,4 +18,5 @@ export default function NotFound() {
       </Link>
     </div>
   );
-}
+};
+export default NotFound;
