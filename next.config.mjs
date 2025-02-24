@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-import { i18n } from "./next-i18next.config.js";
+import { i18n } from "./next-i18next.config.mjs";
 
 const nextConfig = {
   experimental: {
@@ -9,5 +9,4 @@ const nextConfig = {
   images: { domains: ["res.cloudinary.com"] },
 };
 
-// export default nextConfig;
-module.exports = nextConfig;
+export default nextConfig;
