@@ -40,8 +40,8 @@ function Footer() {
             <Image
               src={`${
                 !isDarkMode
-                  ? "https://res.cloudinary.com/dahptqhed/image/upload/v1733161852/almentor_owler_20210531_111400_original_7a0a6accc9.png"
-                  : "https://res.cloudinary.com/dahptqhed/image/upload/v1729065938/almentor_logo_2x_cfebb8e613.png "
+                  ? "https://res.cloudinary.com/dahptqhed/image/upload/v1740401266/almentor_owler_20210531_111400_original_5d330818f9.png"
+                  : "https://res.cloudinary.com/dahptqhed/image/upload/v1740402198/almentor_logo_2x_cfebb8e613_8c95a390d5.png"
               }`}
               width={180}
               height={!isDarkMode ? "60" : "40"}

@@ -130,7 +130,7 @@ function ServiceDetInfo({ serviceDetail }) {
        */}
       <div className="mt-12 flex items-end text-right border-stone-400 border rounded ml-10 p-5 shadow-lg shadow-[#001c25] mr-12">
         <Image
-          src="https://res.cloudinary.com/dahptqhed/image/upload/v1729165362/poster2_bdb5cf59cc.jpg"
+          src="https://res.cloudinary.com/dahptqhed/image/upload/v1740401275/poster2_bba6a73d71.jpg"
           width={500}
           height={450}
           className="object-cover"

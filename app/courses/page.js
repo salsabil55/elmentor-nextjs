@@ -334,7 +334,7 @@ function Page() {
         {filterLength == 0 && (
           <div className="flex justify-center items-center flex-col">
             <Image
-              src="https://res.cloudinary.com/dahptqhed/image/upload/v1732441788/not_found_1c68268de7.png"
+              src="https://res.cloudinary.com/dahptqhed/image/upload/v1740401273/not_found_c098f22238.png"
               alt="no found"
               width={170}
               height={160}

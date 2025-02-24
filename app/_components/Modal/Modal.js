@@ -52,7 +52,7 @@ const Modal = () => {
               X
             </button>
             <Image
-              src="https://res.cloudinary.com/dahptqhed/image/upload/v1729165363/poster4_fad04e5a91.jpg"
+              src="https://res.cloudinary.com/dahptqhed/image/upload/v1740401016/poster4_1976d5e644.jpg"
               className="w-full h-full object-cover transition duration-500 group-hover:scale-105 rounded-lg"
               width={450}
               height={420}

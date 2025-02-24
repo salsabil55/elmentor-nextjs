@@ -19,7 +19,7 @@ export const EmailTemplate = ({ body }) => (
         <div style={styles.centered}>
           <Img
             width="135px"
-            src="https://res.cloudinary.com/dahptqhed/image/upload/v1729065688/almentor_owler_20210531_111400_original_c7bdb05f44.png"
+            src="https://res.cloudinary.com/dahptqhed/image/upload/v1740401266/almentor_owler_20210531_111400_original_5d330818f9.png"
             alt="Almentor Logo"
             style={styles.logo}
           />
